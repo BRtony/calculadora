@@ -1,0 +1,15 @@
+.sidenav {
+    /* background-color: #3f51b5; */
+    width: 150px;
+}
+
+.sidenav i {
+    padding-right: 10px;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

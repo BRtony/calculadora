@@ -1,0 +1,46 @@
+<div id="calculadora2">
+    <div class="input-group input-group-lg mb-3">
+        <input type="text" class="form-control text-right" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" id="display" name="display" readonly [value]="display">
+    </div>
+    <table>
+        <tr>
+            <td><button class="botao2" (click)="raiz()">√</button></td>
+            <td><button class="botao2" (click)="limpar()">C</button></td>
+            <td><button class="botao2" (click)="delete()"><i class="material-icons">
+                backspace
+            </i></button>
+            </td>
+            <td><button class="botao2" (click)="definirOperacao('/')">/</button></td>
+            <td><button class="botao2" (click)="definirOperacao('X')"><i class="material-icons">
+                close
+                </i></button></td>
+        </tr>
+        <tr>
+            <td><button class="botao2" (click)="quadrado()">x²</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('7')">7</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('8')">8</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('9')">9</button></td>
+            <td><button class="botao2" (click)="definirOperacao('-')"><i class="material-icons">
+                remove
+                </i></button></td>
+        </tr>
+        <tr>
+            <td><button class="botao2" (click)="cubo()">x³</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('4')">4</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('5')">5</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('6')">6</button></td>
+            <td><button class="botao2" (click)="definirOperacao('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button class="botao2" (click)="adicionaNumero('3.14159265359')">π</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('1')">1</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('2')">2</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('3')">3</button></td>
+            <td rowspan="2"><button class="botao2" style="height: 106px;" (click)="calcular()">=</button></td>
+        </tr>
+        <tr>
+            <td colspan="3"><button class="botao2" style="width: 177px;" (click)="adicionaNumero('0')">0</button></td>
+            <td><button class="botao2" (click)="adicionaNumero('.')">.</button></td>
+        </tr>
+    </table>
+</div>

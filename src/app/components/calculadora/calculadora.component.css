@@ -1,0 +1,28 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+#calculadora2 {
+    position: absolute;
+    background-color: #424242;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 5px 5px 15px grey;
+    margin-top: 3%;
+}
+
+.botao2 {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 3px;
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.botao2:hover {
+    background-color: black;
+}
