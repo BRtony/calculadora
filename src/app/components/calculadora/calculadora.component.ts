@@ -38,8 +38,8 @@ export class CalculadoraComponent implements OnInit {
    */
   adicionaNumero(numero: string): void {
     if (this.resultado !== null) {
-       this.limpar();
-    } 
+      this.limpar();
+    }
     if (this.operacao == null) {
       this.numero1 = this.concatenaNumero(this.numero1, numero);
     } else {
@@ -61,6 +61,7 @@ export class CalculadoraComponent implements OnInit {
     if (numAtual === '0' || numAtual === null) {
       numAtual = '';
     }
+    
     //numero1 inicial ('0') concatenando com '.'
     if (numConcat === '.' && numAtual === '') {
       return '0.';
@@ -108,25 +109,65 @@ export class CalculadoraComponent implements OnInit {
 
   }
   delete() {
+    if(this.numero1 == '0')
+      return
     if (this.numero2 === null) {
       this.numero1 = this.numero1.toString().slice(0, -1);
     } else {
       this.numero2 = this.numero2.toString().slice(0, -1);
     }
   }
-  
-  calcular(): void {
-    
-      if (this.numero2 === null) {
-        return;
-      }
+ 
+  // pi() :void {
+  //   if (this.numero1 === '0' || !this.numero1)
+  //     this.resultado = Math.PI
+  //   if (this.numero2 === null){
+  //     let num1 = parseFloat(this.numero1);
+  //     num1 *= Math.PI
+  //     this.numero1 = num1.toString();
+  //   }
+  //   if (this.numero2){
+  //     let num2 = parseFloat(this.numero2);
+  //     num2 *= Math.PI
+  //     this.numero2 = num2.toString();
+  //   }
+  // }
+  pi() :void {
+    if (this.numero1 === '0' || !this.numero1)
+      this.resultado = Math.PI
+    if (this.numero2 === null){
+      this.numero1 = this.calculadoraService.pi(parseFloat(this.numero1)).toString();
+    } else if (this.numero2 !== null){
+      this.numero2 = this.calculadoraService.pi(parseFloat(this.numero2)).toString();
+    }
+  }
+  // converte(): void {
+  //   let num1 = parseFloat(this.numero1);
+  //   let num2 = parseFloat(this.numero2);
 
-      this.resultado = this.calculadoraService.calcular(
-        parseFloat(this.numero1),
-        parseFloat(this.numero2),
-        this.operacao
-      );
-      
+  //   if (this.numero2 === null) {
+  //     num1 = (num1 * -1);
+  //     this.numero1 = num1.toString()
+
+  //   } else {
+  //     num2 = (num2 * -1);
+  //     this.numero2 = num2.toString()
+  //   }
+
+  // }
+
+  calcular(): void {
+
+    if (this.numero2 === null) {
+      return;
+    }
+
+    this.resultado = this.calculadoraService.calcular(
+      parseFloat(this.numero1),
+      parseFloat(this.numero2),
+      this.operacao
+    );
+
   }
   get display(): string {
     if (this.resultado !== null) {

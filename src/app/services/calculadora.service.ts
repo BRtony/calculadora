@@ -44,13 +44,19 @@ export class CalculadoraService {
     }
     quadrado(num1: number):number {
       let resultado: number;
-      resultado = Math.pow(num1, 2);;
+      resultado = Math.pow(num1, 2);
       return resultado;
     }
     cubo(num1: number):number {
       let resultado: number;
       resultado = Math.pow(num1, 3);
       return resultado;
+    }
+   
+    pi(num: number):number {
+      let resultado:number;
+      resultado = num * Math.PI
+      return resultado
     }
    
    
